@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const ItemList = ({ items, title}) => {
 // const ItemList = (props) => {
     // const blogs = props.blogs;
@@ -9,9 +11,10 @@ const ItemList = ({ items, title}) => {
         <h2>{ title }</h2>
         {items.map(item => (
           <div className="item-preview" key={item.id} >
-            <h2>{ item.title }</h2>
-            <p>Written by { item.author }</p>
-            <button>delete item</button>
+            <Link to={`/blogs/${item.id}`}>
+              <h2>{ item.title }</h2>
+              <p>Written by { item.author }</p>
+            </Link>
           </div>
         ))}
       </div>
