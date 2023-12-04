@@ -51,3 +51,13 @@
 .item-preview a{
   text-decoration: none;
 }
+
+/* blog details page */
+.item-details div {
+  margin: 20px 0;
+}
+.item-details h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 10px;
+}
