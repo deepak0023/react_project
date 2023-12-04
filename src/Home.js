@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import useFetch from "./useFetch";
 
@@ -7,11 +6,11 @@ const Home = () => {
 
   return (
     <div className="home">
-      { error && <div>{error}</div> }
+      {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
       {blogs && <ItemList items={blogs} />}
     </div>
   );
 }
-
+ 
 export default Home;
