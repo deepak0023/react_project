@@ -6,11 +6,16 @@
   font-family: "Quicksand";
   color: #333;
 }
+.App {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+/* Navbar css */
 .navbar {
   padding: 20px;
   display: flex;
   align-items: center;
-  max-width: 600px;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
 }
@@ -53,13 +58,13 @@
 }
 
 /* blog details page */
-.item-details div {
-  margin: 20px 0;
-}
 .item-details h2 {
   font-size: 20px;
   color: #f1356d;
   margin-bottom: 10px;
+}
+.item-details div {
+  margin: 20px 0;
 }
 .item-details button {
   background: #f1356d;
@@ -69,7 +74,6 @@
   border-radius: 8px;
   cursor: pointer;
 }
-
 
 /* create new blog form */
 .create {
