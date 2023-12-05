@@ -61,6 +61,15 @@
   color: #f1356d;
   margin-bottom: 10px;
 }
+.item-details button {
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 
 /* create new blog form */
 .create {
@@ -94,3 +103,9 @@
   cursor: pointer;
 }
 
+/* not found page */
+.not-found {
+  width: 100%;
+  margin-top: 5%;
+  text-align: center;
+}
