@@ -40,7 +40,13 @@ Instead, it will copy all the configuration files and the transitive dependencie
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
 # Jsonp Settings
-
 Run the following command for run jsonp server for the provided data
+```
+npx json-server --watch data/db.json --port=<available-port>
+```
 
-### `npx json-server --watch data/db.json --port=<available-port>`
+### Hosted website link
+```
+https://jolly-macaron-b27aab.netlify.app/ (react frontend)
+https://mock-server-6iau.onrender.com/blogs (mock api backend)
+```
