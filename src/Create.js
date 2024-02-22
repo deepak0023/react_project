@@ -2,36 +2,35 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const Create = () => {
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const [author, setAuthor] = useState("student_1");
+  const [isPending, setIsPending] = useState(false);
+  const history = useHistory();
 
-    const [title, setTitle] = useState('');
-    const [body, setBody] = useState('');
-    const [author, setAuthor] = useState('student_1');
-    const [isPending, setIsPending] = useState(false);
-    const history = useHistory();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const blog = { title, body, author };
+    setIsPending(true);
+    fetch("https://mock-server-6iau.onrender.com/blogs/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(blog),
+    }).then(() => {
+      // history.go(-1);           // Go one step back like a back button
+      setIsPending(false);
+      history.push("/");
+    });
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const blog = { title, body, author };
-        setIsPending(true);
-        fetch('http://localhost:8000/blogs/', {
-          method: 'POST',
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(blog)
-        }).then(() => {
-          // history.go(-1);           // Go one step back like a back button
-          setIsPending(false);
-          history.push('/');
-        })
-    }
-
-    return (
+  return (
     <div className="create">
       <h2>Add a New Blog</h2>
       <form onSubmit={handleSubmit}>
         <label>Blog title:</label>
-        <input 
-          type="text" 
-          required 
+        <input
+          type="text"
+          required
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
@@ -42,10 +41,7 @@ const Create = () => {
           onChange={(e) => setBody(e.target.value)}
         ></textarea>
         <label>Blog author:</label>
-        <select
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-        >
+        <select value={author} onChange={(e) => setAuthor(e.target.value)}>
           <option value="student_1">Student 1</option>
           <option value="student_2">Student 2</option>
         </select>
@@ -53,7 +49,7 @@ const Create = () => {
         {isPending && <button>Adding Blog ....</button>}
       </form>
     </div>
-    );
-  }
+  );
+};
 
-  export default Create;
+export default Create;
